@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><title>Your choice form</title>
+<script src="jquery.min.js"></script>
+
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<script type="text/javascript">
+		$(function(){
+		$("#clickButton").on("click", function(){
+			alert("Ouch!");
+			});
+});
+		</script>
+	
+</head>
+<body>
+	<div class="container">
+<h1>My sport quizz</h1>
+
+<br>
+Your name:<br>
+<input type="text" placeholder="firstname">
+<br>
+Address:
+<br>
+<input type="email" placeholder="email addreess">
+
+<fieldset>
+<h2>what is thhe most popular sport in S A?</h2>
+<div class="">
+  <input type="radio" name="Q1" value=""> Under water hockey
+  <br>
+  <input type="radio"  name="Q1" value="rugby"> Rugby
+  <br>
+   <input type="radio" > Soccer
+
+</div>
+
+	<h2>For which sport do you use raeket:</h2>
+<div class="">
+	<input type="radio"  name="Q2" value="tennis"checked>Tennis
+	<br>
+	<input type="radio" name="Q2" value="netball">Netball
+	<br>
+	<input type="radio" name="Q2" value="volleyball">Volleyball
+</div>
+	
+	<h2>which sport use the word 'love'?</h2>
+<div class="">
+	<input type="radio" name"Q3" value="football">Football
+	<br>
+	<input type="radio" name="Q3" value="swimming">Swimming
+	<br>
+	<input type="radio" name="Q3" value="tennis"checked>Tennis
+
+</div>
+<button type="submit" id="clickButton" class="btn btn-success">Submit</button>
+
+</div>
+</body>
+</html>
