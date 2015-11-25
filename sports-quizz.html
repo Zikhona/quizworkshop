@@ -6,25 +6,33 @@
 <link rel="stylesheet" href="bootstrap.min.css">
 
 <script type="text/javascript">
-		$(function(){
-		$("#clickButton").on("click", function(){
-			alert("Ouch!");
+
+$(function(){
+		$("#sportquizz").submit(function(evt){
+			
+			// read up about this
+			evt.preventDefault();
+
+			// https://api.jquery.com/serializeArray/
+			var answers = $(this).serializeArray();
+
+			var answersString = JSON.stringify(answers);
+			alert(answersString);
+
 			});
 });
+		
 		</script>
 	
 </head>
 <body>
 	<div class="container">
-<h1>My sport quizz</h1>
+<h1>sport quizz</h1>
 
 <br>
 Your name:<br>
 <input type="text" placeholder="firstname">
 <br>
-Address:
-<br>
-<input type="email" placeholder="email addreess">
 
 <fieldset>
 <h2>what is thhe most popular sport in S A?</h2>
@@ -33,7 +41,7 @@ Address:
   <br>
   <input type="radio"  name="Q1" value="rugby"> Rugby
   <br>
-   <input type="radio" > Soccer
+   <input type="radio" name="Q1" value="soccer"> Soccer
 
 </div>
 

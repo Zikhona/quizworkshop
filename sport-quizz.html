@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head><title>Your choice form</title>
-<script src="jquery.min.js"></script>
-
-<link rel="stylesheet" href="bootstrap.min.css">
-
-<script type="text/javascript">
-	$(function(){
-		$("#sportquizz").submit(function(evt){
-			
-			// read up about this
-			evt.preventDefault();
-
-			// https://api.jquery.com/serializeArray/
-			var answers = $(this).serializeArray();
-
-			var answersString = JSON.stringify(answers);
-			alert(answersString);
-
-			});
-});
-		</script>
+<head>
+	<title>Your choice form</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="jquery.min.js"></script>
+	<script src="bootstrap.min.js"></script>
 	
 </head>
 <body>
-	<div class="container">
+
+<div class="row">
+
+	<div class="col-md-8">
 	<form id="sportquizz">
-	<h1>My sport quizz</h1>
+	<div class="container">
 
-<br>
-	Your name:<br>
-<input type="text" placeholder="firstname">
-<br>
-	Address:
-<br>
-<input type="email" placeholder="email addreess">
+<h1>Sport quizz</h1>
 
+ <br>Your name:<br>
+	<input type="text" placeholder="firstname">
+<br>Address:<br>
+	<input type="email" placeholder="email addreess">
 
 <h2>what is thhe most popular sport in S A?</h2>
+
 <div class="popular">
-  <input type="radio" name="Q1" value="under water hockey"> Under water hockey
+  	<input type="radio" name="Q1" value="under water hockey"> Under water hockey
   <br>
-  <input type="radio" name="Q1" value="rugby"> Rugby
+  	<input type="radio" name="Q1" value="rugby"> Rugby
   <br>
-   <input type="radio" name="Q1" value="soccers"> Soccer
+   	<input type="radio" name="Q1" value="soccers"> Soccer
 
 </div>
 
 	<h2>For which sport do you use raeket:</h2>
+
 <div class="raeket">
 	<input type="radio"  name="Q2" value="tennis">Tennis
-	<br>
+<br>
 	<input type="radio" name="Q2" value="netball">Netball
-	<br>
+<br>
 	<input type="radio" name="Q2" value="volleyball">Volleyball
 </div>
 	
 	<h2>which sport use the word 'love'?</h2>
+
 <div class="love">
 	<input type="radio" name"Q3" value="football">Football
-	<br>
+<br>
 	<input type="radio" name="Q3" value="swimming">Swimming
-	<br>
+<br>
 	<input type="radio" name="Q3" value="tennis">Tennis
 
 </div>
-<button type="submit" id="clickButton" class="btn btn-success">Submit</button>
+
+<button type="submit" id="clickButton" class="btn btn-danger">Submit</button>
+
 </form>
 
 </div>
+</div>
+
+<div class="col-md-4">
+	<h1>Your score:</h1>
+	<div id="answers"></div>	
+<script type="text/javascript">
+
+$(function(){
+		$("#sportquizz").submit(function(evt){
+			
+// 			// read up about this
+			evt.preventDefault();
+
+// 			// https://api.jquery.com/serializeArray/
+			var answers =$(this).serializeArray();
+
+			var answersString =JSON.stringify(answers);
+			$("#answers").html(answersString);
+
+			});
+});
+		</script>
+
+     <input type="submit" class="btn btn-success" value="Try again">
+
+</div>
+</div>	
 </body>
 </html>
